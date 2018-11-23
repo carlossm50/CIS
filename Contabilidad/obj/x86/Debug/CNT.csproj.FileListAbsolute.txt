@@ -1,0 +1,15 @@
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.exe
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.pdb
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.CNTMenu.resources
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\CNT.csproj.GenerateResource.Cache
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.Properties.Resources.resources
+C:\CIS\CIS\Contabilidad\bin\Debug\Contabilidad.exe
+C:\CIS\CIS\Contabilidad\bin\Debug\Contabilidad.pdb
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.frmcntcta.resources
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.frmcntrub.resources
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.frmcnttiptrn.resources
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.frmcnttrn.resources
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.frmbuscador.resources
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.frmcfgAsitrn.resources
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.frmcntent.resources
+C:\CIS\CIS\Contabilidad\bin\Debug\Contabilidad.exe.config

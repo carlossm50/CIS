@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45AA9B4A-9249-4523-B8AC-ADE7F0C8821E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Contabilidad</RootNamespace>
+    <AssemblyName>Contabilidad</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="controler\ctrlconection.cs" />
+    <Compile Include="controler\ctrlcfgAsitrn.cs" />
+    <Compile Include="controler\ctrlcntcta.cs" />
+    <Compile Include="controler\ctrlcntent.cs" />
+    <Compile Include="controler\ctrlcntrub.cs.cs" />
+    <Compile Include="controler\ctrlcnttiptrn.cs" />
+    <Compile Include="controler\ctrlcnttrn.cs" />
+    <Compile Include="controler\ctrlcrud.cs" />
+    <Compile Include="model\CFGASIENTOTRN_D.cs" />
+    <Compile Include="model\CFGASIENTOTRN_M.cs" />
+    <Compile Include="model\CUENTAS.cs" />
+    <Compile Include="model\RUBROS.cs" />
+    <Compile Include="model\TIPOTRANSACCION.cs" />
+    <Compile Include="model\TRANSACCION.cs" />
+    <Compile Include="model\TRNASIENTO.cs" />
+    <Compile Include="view\CNTMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CNTMenu.Designer.cs">
+      <DependentUpon>CNTMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmbuscador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmbuscador.Designer.cs">
+      <DependentUpon>frmbuscador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmcfgAsitrn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmcfgAsitrn.Designer.cs">
+      <DependentUpon>frmcfgAsitrn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmcntcta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmcntcta.Designer.cs">
+      <DependentUpon>frmcntcta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmcntent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmcntent.Designer.cs">
+      <DependentUpon>frmcntent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmcntrub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmcntrub.Designer.cs">
+      <DependentUpon>frmcntrub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmcnttiptrn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmcnttiptrn.Designer.cs">
+      <DependentUpon>frmcnttiptrn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmcnttrn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmcnttrn.Designer.cs">
+      <DependentUpon>frmcnttrn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="view\CNTMenu.resx">
+      <DependentUpon>CNTMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmbuscador.resx">
+      <DependentUpon>frmbuscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmcfgAsitrn.resx">
+      <DependentUpon>frmcfgAsitrn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmcntcta.resx">
+      <DependentUpon>frmcntcta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmcntent.resx">
+      <DependentUpon>frmcntent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmcntrub.resx">
+      <DependentUpon>frmcntrub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmcnttiptrn.resx">
+      <DependentUpon>frmcnttiptrn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmcnttrn.resx">
+      <DependentUpon>frmcnttrn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_Search.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
