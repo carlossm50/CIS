@@ -1,0 +1,11 @@
+C:\CIS\CIS\INV\bin\Debug\INV.exe.config
+C:\CIS\CIS\INV\bin\Debug\INV.exe
+C:\CIS\CIS\INV\bin\Debug\INV.pdb
+C:\CIS\CIS\INV\obj\x86\Debug\INV.frminvEntrada.resources
+C:\CIS\CIS\INV\obj\x86\Debug\INV.frminvHistorial.resources
+C:\CIS\CIS\INV\obj\x86\Debug\INV.frminvMain.resources
+C:\CIS\CIS\INV\obj\x86\Debug\INV.frminvSalida.resources
+C:\CIS\CIS\INV\obj\x86\Debug\INV.Properties.Resources.resources
+C:\CIS\CIS\INV\obj\x86\Debug\INV.csproj.GenerateResource.Cache
+C:\CIS\CIS\INV\obj\x86\Debug\INV.exe
+C:\CIS\CIS\INV\obj\x86\Debug\INV.pdb

@@ -116,6 +116,7 @@
             this.btnAceptar.TabIndex = 55;
             this.btnAceptar.Text = " ";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmbuscador
             // 

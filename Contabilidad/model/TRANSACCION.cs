@@ -7,9 +7,8 @@
 ///////////////////////////////////////////////////////////
 
 
-
-
 using Contabilidad;
+using System;
 namespace Contabilidad {
 	public class TRANSACCION {
 
@@ -17,6 +16,7 @@ namespace Contabilidad {
         private decimal cnttrnvalor;
         private string cnttrnconc;
         private int cnttiptrnid;
+        private DateTime cnttrnfecha;
 
 		public TRANSACCION(){
 
@@ -65,6 +65,17 @@ namespace Contabilidad {
 				cnttiptrnid = value;
 			}
 		}
+        public DateTime Cnttrnfecha
+        {
+            get
+            {
+                return cnttrnfecha;
+            }
+            set
+            {
+                cnttrnfecha = value;
+            }
+        }
 
 	}//end TRANSACCION
 

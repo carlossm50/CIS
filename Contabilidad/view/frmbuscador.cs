@@ -11,9 +11,15 @@ namespace Contabilidad
 {
     public partial class frmbuscador : Form
     {
+        public string sql;
         public frmbuscador()
         {
             InitializeComponent();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

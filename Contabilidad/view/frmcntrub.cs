@@ -15,5 +15,27 @@ namespace Contabilidad
         {
             InitializeComponent();
         }
+        private bool validacampos()
+        {
+            foreach (Control ctrl in groupBox1.Controls)
+            {
+
+                if (ctrl is TextBox && ctrl.Text == String.Empty)
+                {
+                    MessageBox.Show("Campo Vacio " + ctrl.Tag, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (ctrl.Enabled) ctrl.Focus();
+                    return false;
+                }
+            }
+           
+            return true;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (validacampos()) {
+                MessageBox.Show("Información guardada satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

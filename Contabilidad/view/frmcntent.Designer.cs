@@ -35,8 +35,8 @@
             this.btnConBorrar = new System.Windows.Forms.Button();
             this.btnConAgregar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtcredito = new System.Windows.Forms.RadioButton();
+            this.rbtdebito = new System.Windows.Forms.RadioButton();
             this.dtgTipos = new System.Windows.Forms.DataGridView();
             this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -148,39 +148,39 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.rbtcredito);
+            this.groupBox3.Controls.Add(this.rbtdebito);
             this.groupBox3.Location = new System.Drawing.Point(460, 21);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(94, 67);
             this.groupBox3.TabIndex = 59;
             this.groupBox3.TabStop = false;
             // 
-            // radioButton2
+            // rbtcredito
             // 
-            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rbtcredito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 17);
-            this.radioButton2.TabIndex = 45;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Credito";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtcredito.AutoSize = true;
+            this.rbtcredito.Location = new System.Drawing.Point(7, 34);
+            this.rbtcredito.Name = "rbtcredito";
+            this.rbtcredito.Size = new System.Drawing.Size(58, 17);
+            this.rbtcredito.TabIndex = 45;
+            this.rbtcredito.TabStop = true;
+            this.rbtcredito.Text = "Credito";
+            this.rbtcredito.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtdebito
             // 
-            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rbtdebito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 11);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(56, 17);
-            this.radioButton1.TabIndex = 44;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Debito";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtdebito.AutoSize = true;
+            this.rbtdebito.Location = new System.Drawing.Point(7, 11);
+            this.rbtdebito.Name = "rbtdebito";
+            this.rbtdebito.Size = new System.Drawing.Size(56, 17);
+            this.rbtdebito.TabIndex = 44;
+            this.rbtdebito.TabStop = true;
+            this.rbtdebito.Text = "Debito";
+            this.rbtdebito.UseVisualStyleBackColor = true;
             // 
             // dtgTipos
             // 
@@ -467,6 +467,7 @@
             this.btnAceptar.TabIndex = 105;
             this.btnAceptar.Text = " ";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnSalir
             // 
@@ -556,8 +557,8 @@
         private System.Windows.Forms.Button btnConBorrar;
         private System.Windows.Forms.Button btnConAgregar;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtcredito;
+        private System.Windows.Forms.RadioButton rbtdebito;
         private System.Windows.Forms.DataGridView dtgTipos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

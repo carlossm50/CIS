@@ -43,9 +43,9 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.rbtdetalle = new System.Windows.Forms.RadioButton();
+            this.rbtmaestra = new System.Windows.Forms.RadioButton();
+            this.txtcntctama = new System.Windows.Forms.TextBox();
             this.btnTipo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.txtcntctano = new System.Windows.Forms.TextBox();
             this.lbID = new System.Windows.Forms.Label();
             this.lbCodigo = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtcntctanom = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +150,6 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Enabled = false;
             this.btnAceptar.Image = global::Contabilidad.Properties.Resources._Accept;
             this.btnAceptar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAceptar.Location = new System.Drawing.Point(250, 176);
@@ -159,6 +158,7 @@
             this.btnAceptar.TabIndex = 76;
             this.btnAceptar.Text = " ";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnSalir
             // 
@@ -209,7 +209,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtcntctama);
             this.groupBox1.Controls.Add(this.btnTipo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -217,66 +217,66 @@
             this.groupBox1.Controls.Add(this.txtcntctano);
             this.groupBox1.Controls.Add(this.lbID);
             this.groupBox1.Controls.Add(this.lbCodigo);
-            this.groupBox1.Controls.Add(this.txtCodigo);
+            this.groupBox1.Controls.Add(this.txtcntctanom);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(597, 158);
-            this.groupBox1.TabIndex = 67;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cuenta contable";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.rbtdetalle);
+            this.groupBox2.Controls.Add(this.rbtmaestra);
             this.groupBox2.Location = new System.Drawing.Point(99, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(196, 37);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             // 
-            // radioButton2
+            // rbtdetalle
             // 
-            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rbtdetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(87, 11);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 17);
-            this.radioButton2.TabIndex = 45;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Detalle";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtdetalle.AutoSize = true;
+            this.rbtdetalle.Location = new System.Drawing.Point(87, 11);
+            this.rbtdetalle.Name = "rbtdetalle";
+            this.rbtdetalle.Size = new System.Drawing.Size(58, 17);
+            this.rbtdetalle.TabIndex = 1;
+            this.rbtdetalle.TabStop = true;
+            this.rbtdetalle.Text = "Detalle";
+            this.rbtdetalle.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtmaestra
             // 
-            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rbtmaestra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 11);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 17);
-            this.radioButton1.TabIndex = 44;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Maestra";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtmaestra.AutoSize = true;
+            this.rbtmaestra.Location = new System.Drawing.Point(7, 11);
+            this.rbtmaestra.Name = "rbtmaestra";
+            this.rbtmaestra.Size = new System.Drawing.Size(63, 17);
+            this.rbtmaestra.TabIndex = 0;
+            this.rbtmaestra.TabStop = true;
+            this.rbtmaestra.Text = "Maestra";
+            this.rbtmaestra.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtcntctama
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(99, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 41;
+            this.txtcntctama.BackColor = System.Drawing.SystemColors.Window;
+            this.txtcntctama.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtcntctama.Enabled = false;
+            this.txtcntctama.Location = new System.Drawing.Point(99, 116);
+            this.txtcntctama.Name = "txtcntctama";
+            this.txtcntctama.Size = new System.Drawing.Size(160, 20);
+            this.txtcntctama.TabIndex = 2;
+            this.txtcntctama.Tag = "Cuenta Maestra";
             // 
             // btnTipo
             // 
             this.btnTipo.AccessibleDescription = "";
             this.btnTipo.AccessibleName = "";
             this.btnTipo.BackColor = System.Drawing.SystemColors.Menu;
-            this.btnTipo.Enabled = false;
             this.btnTipo.Image = global::Contabilidad.Properties.Resources._Lookup;
             this.btnTipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnTipo.Location = new System.Drawing.Point(265, 114);
@@ -287,6 +287,7 @@
             this.btnTipo.Tag = " ";
             this.btnTipo.Text = " ";
             this.btnTipo.UseVisualStyleBackColor = false;
+            this.btnTipo.Click += new System.EventHandler(this.btnTipo_Click);
             // 
             // label2
             // 
@@ -306,7 +307,7 @@
             this.textBox1.Location = new System.Drawing.Point(301, 116);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(263, 20);
-            this.textBox1.TabIndex = 17;
+            this.textBox1.TabIndex = 3;
             // 
             // label1
             // 
@@ -320,11 +321,12 @@
             // 
             // txtcntctano
             // 
-            this.txtcntctano.Enabled = false;
             this.txtcntctano.Location = new System.Drawing.Point(99, 35);
             this.txtcntctano.Name = "txtcntctano";
             this.txtcntctano.Size = new System.Drawing.Size(160, 20);
-            this.txtcntctano.TabIndex = 13;
+            this.txtcntctano.TabIndex = 0;
+            this.txtcntctano.Tag = "Numero de Cuenta";
+            this.txtcntctano.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcntctano_KeyPress);
             // 
             // lbID
             // 
@@ -346,15 +348,14 @@
             this.lbCodigo.TabIndex = 11;
             this.lbCodigo.Text = "Cuenta nombre:";
             // 
-            // txtCodigo
+            // txtcntctanom
             // 
-            this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(355, 35);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(209, 20);
-            this.txtCodigo.TabIndex = 12;
+            this.txtcntctanom.BackColor = System.Drawing.SystemColors.Window;
+            this.txtcntctanom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtcntctanom.Location = new System.Drawing.Point(355, 35);
+            this.txtcntctanom.Name = "txtcntctanom";
+            this.txtcntctanom.Size = new System.Drawing.Size(209, 20);
+            this.txtcntctanom.TabIndex = 1;
             // 
             // frmcntcta
             // 
@@ -402,9 +403,9 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton rbtdetalle;
+        private System.Windows.Forms.RadioButton rbtmaestra;
+        private System.Windows.Forms.TextBox txtcntctama;
         private System.Windows.Forms.Button btnTipo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
@@ -412,6 +413,6 @@
         private System.Windows.Forms.TextBox txtcntctano;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbCodigo;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtcntctanom;
     }
 }

@@ -8,32 +8,49 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using Contabilidad.Properties;
 using System.Configuration;
+using System.Windows.Forms;
 namespace Contabilidad.controler
 {
    
     class ctrlcntcta : ctrlconection 
     {
 
-        MySqlConnection mysqlconexion=new MySqlConnection();
+        MySqlConnection mysqlconexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["cntString"].ConnectionString);
 
         public ctrlcntcta(){
             
         }
 
-        public Boolean insert(CUENTAS cta) {
-
-            this.mysqlconexion.Open();
-
-            string sql = "START TRANSACTION;"+
-                "INSERT INTO cis.cuenta (cntctano,cntctanom,cntctatipo,cUENTASID,cntctama) " +
-                            "VALUES ("+cta.Cntctano+","+cta.Cntctanom+","+cta.Cntctatipo+","+cta.Cntctama+");"+
-                            "ROLLBACK;";
-            if (mysqlconexion.State == ConnectionState.Open)
+        public Boolean insert(CUENTAS cta)
+        {
+            
+            string sql = "START TRANSACTION;" +
+                "INSERT INTO cis.cuenta (cntctano,cntctanom,cntctatipo,cntctama) " +
+                            "VALUES ('" + cta.Cntctano + "','" + cta.Cntctanom + "','" + cta.Cntctatipo + "','" + cta.Cntctama + "');" +
+                            "COMMIT;";
+            MySqlCommand cmd = new MySqlCommand(sql, mysqlconexion);
+            try
             {
-                this.mysqlconexion.Close();
-                return true;
+                this.mysqlconexion.Open();
+                if (mysqlconexion.State == ConnectionState.Open)
+                {
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+                else 
+                    return false;
             }
-            else return false;   
+            catch(Exception e){
+                MessageBox.Show("Error: "+e.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            finally{
+                this.mysqlconexion.Close();
+            }
+
         }
         public Boolean update(CUENTAS cta)
         {

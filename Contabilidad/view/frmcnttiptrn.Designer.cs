@@ -150,6 +150,7 @@
             this.btnAceptar.TabIndex = 62;
             this.btnAceptar.Text = " ";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnSalir
             // 
