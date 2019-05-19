@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Configuration;
 using INV.control;
 using INV.model;
+using INV.view;
+
 
 namespace INV
 {
@@ -115,7 +117,7 @@ namespace INV
 
         private void btnNewOk_Click(object sender, EventArgs e)
         {
-            if (btnNewOk.Tag.ToString() == "0")
+            /*if (btnNewOk.Tag.ToString() == "0")
             {
                 btnNewOk.Image = Image.FromFile(ConfigurationManager.AppSettings["imagenes"].ToString() + @"\outline_check.png");
                 btnNewOk.Tag = "1";
@@ -123,7 +125,7 @@ namespace INV
             else {
                 btnNewOk.Image = Image.FromFile(ConfigurationManager.AppSettings["imagenes"].ToString() + @"\add1.png");
                 btnNewOk.Tag = "0";
-            }
+            }*/
             
         }
 
@@ -321,6 +323,13 @@ namespace INV
             {
                 e.Handled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rptinventario formrept = new rptinventario();
+            formrept.StartPosition = FormStartPosition.CenterScreen;
+            formrept.Show();
         }
     }
 }

@@ -9,3 +9,6 @@ C:\CIS\CIS\INV\obj\x86\Debug\INV.Properties.Resources.resources
 C:\CIS\CIS\INV\obj\x86\Debug\INV.csproj.GenerateResource.Cache
 C:\CIS\CIS\INV\obj\x86\Debug\INV.exe
 C:\CIS\CIS\INV\obj\x86\Debug\INV.pdb
+C:\CIS\CIS\INV\obj\x86\Debug\INV.csprojResolveAssemblyReference.cache
+C:\CIS\CIS\INV\obj\x86\Debug\INV.view.invetarioRPT.resources
+C:\CIS\CIS\INV\obj\x86\Debug\INV.view.rptinventario.resources

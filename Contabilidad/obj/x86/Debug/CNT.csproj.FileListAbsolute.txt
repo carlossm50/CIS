@@ -13,3 +13,4 @@ C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.Properties.Resources.resource
 C:\CIS\CIS\Contabilidad\obj\x86\Debug\CNT.csproj.GenerateResource.Cache
 C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.exe
 C:\CIS\CIS\Contabilidad\obj\x86\Debug\Contabilidad.pdb
+C:\CIS\CIS\Contabilidad\obj\x86\Debug\CNT.csprojResolveAssemblyReference.cache

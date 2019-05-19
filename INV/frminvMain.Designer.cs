@@ -37,7 +37,6 @@
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnNewOk = new System.Windows.Forms.Button();
             this.btnsync = new System.Windows.Forms.Button();
             this.txtexistencia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtgasto = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInvMain)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -80,12 +80,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.dtgInvMain);
             this.groupBox1.Location = new System.Drawing.Point(182, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1047, 466);
+            this.groupBox1.Size = new System.Drawing.Size(916, 466);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
@@ -111,7 +109,7 @@
             this.dtgInvMain.ReadOnly = true;
             this.dtgInvMain.RowHeadersWidth = 20;
             this.dtgInvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgInvMain.Size = new System.Drawing.Size(1035, 441);
+            this.dtgInvMain.Size = new System.Drawing.Size(904, 441);
             this.dtgInvMain.TabIndex = 59;
             this.dtgInvMain.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgInvMain_RowEnter);
             // 
@@ -157,7 +155,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnNewOk);
             this.groupBox2.Controls.Add(this.btnsync);
             this.groupBox2.Controls.Add(this.txtexistencia);
             this.groupBox2.Controls.Add(this.label5);
@@ -171,20 +168,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(182, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1266, 50);
+            this.groupBox2.Size = new System.Drawing.Size(1138, 50);
             this.groupBox2.TabIndex = 71;
             this.groupBox2.TabStop = false;
-            // 
-            // btnNewOk
-            // 
-            this.btnNewOk.Image = ((System.Drawing.Image)(resources.GetObject("btnNewOk.Image")));
-            this.btnNewOk.Location = new System.Drawing.Point(1096, 13);
-            this.btnNewOk.Name = "btnNewOk";
-            this.btnNewOk.Size = new System.Drawing.Size(37, 25);
-            this.btnNewOk.TabIndex = 81;
-            this.btnNewOk.Tag = "0";
-            this.btnNewOk.UseVisualStyleBackColor = true;
-            this.btnNewOk.Click += new System.EventHandler(this.btnNewOk_Click);
             // 
             // btnsync
             // 
@@ -291,12 +277,13 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.groupBox3.Controls.Add(this.btnEntrada);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.btnHistorial);
             this.groupBox3.Controls.Add(this.btnSalida);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Location = new System.Drawing.Point(4, 18);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(172, 601);
+            this.groupBox3.Size = new System.Drawing.Size(172, 571);
             this.groupBox3.TabIndex = 72;
             this.groupBox3.TabStop = false;
             // 
@@ -408,7 +395,7 @@
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.txtgasto);
             this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Location = new System.Drawing.Point(1235, 126);
+            this.groupBox5.Location = new System.Drawing.Point(1104, 126);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(216, 255);
             this.groupBox5.TabIndex = 71;
@@ -423,7 +410,7 @@
             this.txttotalprod.Name = "txttotalprod";
             this.txttotalprod.Size = new System.Drawing.Size(98, 20);
             this.txttotalprod.TabIndex = 82;
-            this.txttotalprod.Text = "20000";
+            this.txttotalprod.Text = "0";
             // 
             // label12
             // 
@@ -443,7 +430,7 @@
             this.txtinvinicial.Name = "txtinvinicial";
             this.txtinvinicial.Size = new System.Drawing.Size(98, 20);
             this.txtinvinicial.TabIndex = 80;
-            this.txtinvinicial.Text = "20000";
+            this.txtinvinicial.Text = "0";
             this.txtinvinicial.Validating += new System.ComponentModel.CancelEventHandler(this.txtinvinicial_Validating);
             // 
             // label6
@@ -463,7 +450,7 @@
             this.txtcxp.Name = "txtcxp";
             this.txtcxp.Size = new System.Drawing.Size(98, 20);
             this.txtcxp.TabIndex = 78;
-            this.txtcxp.Text = "20000";
+            this.txtcxp.Text = "0";
             this.txtcxp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcxp_KeyPress);
             this.txtcxp.Validating += new System.ComponentModel.CancelEventHandler(this.txtcxp_Validating);
             // 
@@ -484,7 +471,7 @@
             this.txtcxc.Name = "txtcxc";
             this.txtcxc.Size = new System.Drawing.Size(98, 20);
             this.txtcxc.TabIndex = 76;
-            this.txtcxc.Text = "20000";
+            this.txtcxc.Text = "0";
             this.txtcxc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcxc_KeyPress);
             this.txtcxc.Validating += new System.ComponentModel.CancelEventHandler(this.txtcxc_Validating);
             // 
@@ -505,7 +492,7 @@
             this.txtefectivo.Name = "txtefectivo";
             this.txtefectivo.Size = new System.Drawing.Size(98, 20);
             this.txtefectivo.TabIndex = 74;
-            this.txtefectivo.Text = "20000";
+            this.txtefectivo.Text = "0";
             this.txtefectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtefectivo_KeyPress);
             this.txtefectivo.Validating += new System.ComponentModel.CancelEventHandler(this.txtefectivo_Validating);
             // 
@@ -526,7 +513,7 @@
             this.txtgasto.Name = "txtgasto";
             this.txtgasto.Size = new System.Drawing.Size(98, 20);
             this.txtgasto.TabIndex = 72;
-            this.txtgasto.Text = "20000";
+            this.txtgasto.Text = "0";
             this.txtgasto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtgasto_KeyPress);
             this.txtgasto.Validating += new System.ComponentModel.CancelEventHandler(this.txtgasto_Validating);
             // 
@@ -539,11 +526,28 @@
             this.label11.TabIndex = 71;
             this.label11.Text = "Gastos";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(6, 256);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 49);
+            this.button1.TabIndex = 72;
+            this.button1.Text = "IMPRIMIR INVENTARIO   ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frminvMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1460, 660);
+            this.ClientSize = new System.Drawing.Size(1339, 605);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -571,7 +575,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtgInvMain;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnNewOk;
         private System.Windows.Forms.Button btnsync;
         private System.Windows.Forms.TextBox txtexistencia;
         private System.Windows.Forms.Label label5;
@@ -609,6 +612,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn existencia;
         private System.Windows.Forms.TextBox txttotalprod;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
     }
 }
 
