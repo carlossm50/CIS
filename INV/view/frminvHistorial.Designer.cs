@@ -91,7 +91,7 @@
             this.btngenerar.TabIndex = 77;
             this.btngenerar.Text = "Generar";
             this.btngenerar.UseVisualStyleBackColor = true;
-            this.btngenerar.Click += new System.EventHandler(this.button1_Click);
+            this.btngenerar.Click += new System.EventHandler(this.btngenerar_Click);
             // 
             // frminvHistorial
             // 

@@ -60,6 +60,7 @@
             this.txtinvInicial.Name = "txtinvInicial";
             this.txtinvInicial.Size = new System.Drawing.Size(98, 20);
             this.txtinvInicial.TabIndex = 71;
+            this.txtinvInicial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtinvInicial_KeyPress);
             // 
             // label4
             // 

@@ -84,6 +84,7 @@
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(129, 20);
             this.txtprecio.TabIndex = 73;
+            this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
             // 
             // label4
             // 
@@ -100,6 +101,7 @@
             this.txtexistencia.Name = "txtexistencia";
             this.txtexistencia.Size = new System.Drawing.Size(129, 20);
             this.txtexistencia.TabIndex = 71;
+            this.txtexistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtexistencia_KeyPress);
             // 
             // label5
             // 
@@ -116,6 +118,7 @@
             this.txtcosto.Name = "txtcosto";
             this.txtcosto.Size = new System.Drawing.Size(129, 20);
             this.txtcosto.TabIndex = 71;
+            this.txtcosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcosto_KeyPress);
             // 
             // label3
             // 

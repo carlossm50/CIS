@@ -204,6 +204,7 @@
             this.txtexistencia.Size = new System.Drawing.Size(131, 20);
             this.txtexistencia.TabIndex = 80;
             this.txtexistencia.TextChanged += new System.EventHandler(this.txtexistencia_TextChanged);
+            this.txtexistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtexistencia_KeyPress);
             this.txtexistencia.Validating += new System.ComponentModel.CancelEventHandler(this.txtexistencia_Validating);
             this.txtexistencia.Validated += new System.EventHandler(this.txtexistencia_Validated);
             // 
@@ -463,6 +464,7 @@
             this.txtcxp.Size = new System.Drawing.Size(98, 20);
             this.txtcxp.TabIndex = 78;
             this.txtcxp.Text = "20000";
+            this.txtcxp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcxp_KeyPress);
             this.txtcxp.Validating += new System.ComponentModel.CancelEventHandler(this.txtcxp_Validating);
             // 
             // label7
@@ -483,6 +485,7 @@
             this.txtcxc.Size = new System.Drawing.Size(98, 20);
             this.txtcxc.TabIndex = 76;
             this.txtcxc.Text = "20000";
+            this.txtcxc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcxc_KeyPress);
             this.txtcxc.Validating += new System.ComponentModel.CancelEventHandler(this.txtcxc_Validating);
             // 
             // label8
@@ -503,6 +506,7 @@
             this.txtefectivo.Size = new System.Drawing.Size(98, 20);
             this.txtefectivo.TabIndex = 74;
             this.txtefectivo.Text = "20000";
+            this.txtefectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtefectivo_KeyPress);
             this.txtefectivo.Validating += new System.ComponentModel.CancelEventHandler(this.txtefectivo_Validating);
             // 
             // label9
@@ -523,6 +527,7 @@
             this.txtgasto.Size = new System.Drawing.Size(98, 20);
             this.txtgasto.TabIndex = 72;
             this.txtgasto.Text = "20000";
+            this.txtgasto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtgasto_KeyPress);
             this.txtgasto.Validating += new System.ComponentModel.CancelEventHandler(this.txtgasto_Validating);
             // 
             // label11

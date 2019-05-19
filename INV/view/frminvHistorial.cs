@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using INV.model;
+using INV.control;
 
 namespace INV
 {
@@ -25,10 +26,19 @@ namespace INV
         {
             txtentidad.Text = entidad;
             txtfecha.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            historicom.Fecha_inventario = DateTime.Today;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void btngenerar_Click(object sender, EventArgs e)
         {
+            ctrlinvhistoricom historico = new ctrlinvhistoricom();
+            if (historico.insertHistM(historicom)) {
+                MessageBox.Show("El proceso ha finalizado exitosamente.", "Información", MessageBoxButtons.OK);
+                this.Close();
+            }
+
 
         }
 

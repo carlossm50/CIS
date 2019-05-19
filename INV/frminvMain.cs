@@ -78,7 +78,7 @@ namespace INV
                 _historial.historicom.Valor_efectivo = Double.Parse(txtefectivo.Text);
 
                 _historial.historicom.Valor_gasto = Double.Parse(txtgasto.Text);
-                _historial.historicom.Valor_invInicial = Double.Parse(txtinvinicial.Text);
+                _historial.historicom.Valor_invInicial = Double.Parse(txtinvinicial.Text);                
                 _historial.entidad = cbxentidad.Text.Split('-')[1];
                 if (dtgInvMain.RowCount > 0)
                 {
@@ -180,12 +180,21 @@ namespace INV
         {
             btnsync.Enabled = false;
             actualizarvalorproductos();
+            foreach (DataGridViewRow fila in dtgInvMain.Rows) {
+                ctrlinvhistoricom historicom = new ctrlinvhistoricom();
+                //MessageBox.Show(fila.Cells[0].Value.ToString() + " " + fila.Cells[4].Value.ToString(), "", MessageBoxButtons.OK);
+                if (!historicom.actualizar_existencia(fila.Cells[0].Value.ToString(),fila.Cells[4].Value.ToString()))
+                {
+                    MessageBox.Show("Se ha producido un error al actualizar la existencia.", "Información", MessageBoxButtons.OK);
+                }
+            
+            }
            
         }
 
         private void txtexistencia_TextChanged(object sender, EventArgs e)
         {
-            btnsync.Enabled = true;
+            
         }
 
         private void txtexistencia_Validating(object sender, CancelEventArgs e)
@@ -249,6 +258,68 @@ namespace INV
 
                 //MessageBox.Show(totalproductos.ToString(), "", MessageBoxButtons.OK);
                 //return;
+            }
+        }
+
+        private void txtexistencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+              if (Char.IsNumber(e.KeyChar) || Char.IsControl(e.KeyChar))
+            {
+                btnsync.Enabled = true;
+                  
+            }
+              else{
+                  e.Handled = true;   
+              }            
+            
+        }
+
+        private void txtgasto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar != '.' && !Char.IsNumber(e.KeyChar) && !Char.IsControl(e.KeyChar)) )
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && txtgasto.Text.IndexOf('.') >= 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtefectivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar != '.' && !Char.IsNumber(e.KeyChar) && !Char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && txtefectivo.Text.IndexOf('.') >= 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcxc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar != '.' && !Char.IsNumber(e.KeyChar) && !Char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && txtcxc.Text.IndexOf('.') >= 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcxp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar != '.' && !Char.IsNumber(e.KeyChar) && !Char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && txtcxp.Text.IndexOf('.') >= 0)
+            {
+                e.Handled = true;
             }
         }
     }
