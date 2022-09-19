@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIS", "CIS\CIS.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNT", "Contabilidad\CNT.csproj", "{45AA9B4A-9249-4523-B8AC-ADE7F0C8821E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INV", "INV\INV.csproj", "{71E5D06E-3939-43F0-98F8-B7F93E16EA81}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,10 +19,6 @@ Global
 		{45AA9B4A-9249-4523-B8AC-ADE7F0C8821E}.Debug|x86.Build.0 = Debug|x86
 		{45AA9B4A-9249-4523-B8AC-ADE7F0C8821E}.Release|x86.ActiveCfg = Release|x86
 		{45AA9B4A-9249-4523-B8AC-ADE7F0C8821E}.Release|x86.Build.0 = Release|x86
-		{71E5D06E-3939-43F0-98F8-B7F93E16EA81}.Debug|x86.ActiveCfg = Debug|x86
-		{71E5D06E-3939-43F0-98F8-B7F93E16EA81}.Debug|x86.Build.0 = Debug|x86
-		{71E5D06E-3939-43F0-98F8-B7F93E16EA81}.Release|x86.ActiveCfg = Release|x86
-		{71E5D06E-3939-43F0-98F8-B7F93E16EA81}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

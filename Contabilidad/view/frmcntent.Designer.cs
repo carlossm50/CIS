@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCtaMonto = new System.Windows.Forms.TextBox();
             this.btnConEditar = new System.Windows.Forms.Button();
             this.btnConCancelar = new System.Windows.Forms.Button();
             this.btnConAceptar = new System.Windows.Forms.Button();
@@ -38,21 +39,15 @@
             this.rbtcredito = new System.Windows.Forms.RadioButton();
             this.rbtdebito = new System.Windows.Forms.RadioButton();
             this.dtgTipos = new System.Windows.Forms.DataGridView();
-            this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtCtaNo = new System.Windows.Forms.TextBox();
+            this.btnBusCta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCtaNom = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCoceptoEnt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnTipo = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnPrimero = new System.Windows.Forms.Button();
             this.btnUltimo = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
@@ -66,6 +61,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtCtaEntValor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTipos)).BeginInit();
@@ -74,6 +75,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtCtaMonto);
             this.groupBox2.Controls.Add(this.btnConEditar);
             this.groupBox2.Controls.Add(this.btnConCancelar);
             this.groupBox2.Controls.Add(this.btnConAceptar);
@@ -81,15 +83,24 @@
             this.groupBox2.Controls.Add(this.btnConAgregar);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.dtgTipos);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.txtCtaNo);
+            this.groupBox2.Controls.Add(this.btnBusCta);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtCtaNom);
             this.groupBox2.Location = new System.Drawing.Point(12, 98);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(572, 289);
+            this.groupBox2.Size = new System.Drawing.Size(724, 289);
             this.groupBox2.TabIndex = 110;
             this.groupBox2.TabStop = false;
+            // 
+            // txtCtaMonto
+            // 
+            this.txtCtaMonto.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCtaMonto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCtaMonto.Location = new System.Drawing.Point(467, 22);
+            this.txtCtaMonto.Name = "txtCtaMonto";
+            this.txtCtaMonto.Size = new System.Drawing.Size(165, 20);
+            this.txtCtaMonto.TabIndex = 2;
             // 
             // btnConEditar
             // 
@@ -98,7 +109,7 @@
             this.btnConEditar.Location = new System.Drawing.Point(73, 251);
             this.btnConEditar.Name = "btnConEditar";
             this.btnConEditar.Size = new System.Drawing.Size(59, 23);
-            this.btnConEditar.TabIndex = 61;
+            this.btnConEditar.TabIndex = 5;
             this.btnConEditar.Text = "Editar";
             this.btnConEditar.UseVisualStyleBackColor = true;
             // 
@@ -109,7 +120,7 @@
             this.btnConCancelar.Location = new System.Drawing.Point(281, 251);
             this.btnConCancelar.Name = "btnConCancelar";
             this.btnConCancelar.Size = new System.Drawing.Size(59, 23);
-            this.btnConCancelar.TabIndex = 64;
+            this.btnConCancelar.TabIndex = 8;
             this.btnConCancelar.Text = "Cancelar";
             this.btnConCancelar.UseVisualStyleBackColor = true;
             // 
@@ -120,64 +131,65 @@
             this.btnConAceptar.Location = new System.Drawing.Point(227, 251);
             this.btnConAceptar.Name = "btnConAceptar";
             this.btnConAceptar.Size = new System.Drawing.Size(53, 23);
-            this.btnConAceptar.TabIndex = 63;
+            this.btnConAceptar.TabIndex = 7;
             this.btnConAceptar.Text = "Aceptar";
             this.btnConAceptar.UseVisualStyleBackColor = true;
+            this.btnConAceptar.Click += new System.EventHandler(this.btnConAceptar_Click);
             // 
             // btnConBorrar
             // 
-            this.btnConBorrar.Enabled = false;
             this.btnConBorrar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnConBorrar.Location = new System.Drawing.Point(135, 251);
             this.btnConBorrar.Name = "btnConBorrar";
             this.btnConBorrar.Size = new System.Drawing.Size(59, 23);
-            this.btnConBorrar.TabIndex = 62;
+            this.btnConBorrar.TabIndex = 6;
             this.btnConBorrar.Text = "Borrar";
             this.btnConBorrar.UseVisualStyleBackColor = true;
+            this.btnConBorrar.Click += new System.EventHandler(this.btnConBorrar_Click);
             // 
             // btnConAgregar
             // 
-            this.btnConAgregar.Enabled = false;
             this.btnConAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnConAgregar.Location = new System.Drawing.Point(17, 251);
             this.btnConAgregar.Name = "btnConAgregar";
             this.btnConAgregar.Size = new System.Drawing.Size(53, 23);
-            this.btnConAgregar.TabIndex = 60;
+            this.btnConAgregar.TabIndex = 4;
             this.btnConAgregar.Text = "Agregar";
             this.btnConAgregar.UseVisualStyleBackColor = true;
+            this.btnConAgregar.Click += new System.EventHandler(this.btnConAgregar_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.rbtcredito);
             this.groupBox3.Controls.Add(this.rbtdebito);
-            this.groupBox3.Location = new System.Drawing.Point(460, 21);
+            this.groupBox3.Location = new System.Drawing.Point(638, 22);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(94, 67);
-            this.groupBox3.TabIndex = 59;
+            this.groupBox3.Size = new System.Drawing.Size(80, 67);
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
             // rbtcredito
             // 
-            this.rbtcredito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtcredito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtcredito.AutoSize = true;
             this.rbtcredito.Location = new System.Drawing.Point(7, 34);
             this.rbtcredito.Name = "rbtcredito";
             this.rbtcredito.Size = new System.Drawing.Size(58, 17);
-            this.rbtcredito.TabIndex = 45;
-            this.rbtcredito.TabStop = true;
+            this.rbtcredito.TabIndex = 1;
             this.rbtcredito.Text = "Credito";
             this.rbtcredito.UseVisualStyleBackColor = true;
             // 
             // rbtdebito
             // 
-            this.rbtdebito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtdebito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtdebito.AutoSize = true;
+            this.rbtdebito.Checked = true;
             this.rbtdebito.Location = new System.Drawing.Point(7, 11);
             this.rbtdebito.Name = "rbtdebito";
             this.rbtdebito.Size = new System.Drawing.Size(56, 17);
-            this.rbtdebito.TabIndex = 44;
+            this.rbtdebito.TabIndex = 0;
             this.rbtdebito.TabStop = true;
             this.rbtdebito.Text = "Debito";
             this.rbtdebito.UseVisualStyleBackColor = true;
@@ -190,58 +202,43 @@
             this.dtgTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cuenta,
-            this.Descripcion});
+            this.Descripcion,
+            this.Monto,
+            this.origen});
             this.dtgTipos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtgTipos.Location = new System.Drawing.Point(17, 57);
             this.dtgTipos.MultiSelect = false;
             this.dtgTipos.Name = "dtgTipos";
             this.dtgTipos.ReadOnly = true;
             this.dtgTipos.RowHeadersWidth = 20;
-            this.dtgTipos.Size = new System.Drawing.Size(429, 188);
+            this.dtgTipos.Size = new System.Drawing.Size(615, 188);
             this.dtgTipos.TabIndex = 58;
             // 
-            // Cuenta
+            // txtCtaNo
             // 
-            this.Cuenta.DataPropertyName = "Codigo";
-            this.Cuenta.HeaderText = "Cuenta";
-            this.Cuenta.Name = "Cuenta";
-            this.Cuenta.ReadOnly = true;
-            this.Cuenta.Width = 200;
+            this.txtCtaNo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCtaNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCtaNo.Location = new System.Drawing.Point(59, 22);
+            this.txtCtaNo.Name = "txtCtaNo";
+            this.txtCtaNo.Size = new System.Drawing.Size(146, 20);
+            this.txtCtaNo.TabIndex = 0;
             // 
-            // Descripcion
+            // btnBusCta
             // 
-            this.Descripcion.DataPropertyName = "Descripción";
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(59, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 20);
-            this.textBox3.TabIndex = 45;
-            // 
-            // button1
-            // 
-            this.button1.AccessibleDescription = "";
-            this.button1.AccessibleName = "";
-            this.button1.BackColor = System.Drawing.SystemColors.Menu;
-            this.button1.Enabled = false;
-            this.button1.Image = global::Contabilidad.Properties.Resources._Lookup;
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(204, 21);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(30, 22);
-            this.button1.TabIndex = 44;
-            this.button1.Tag = " ";
-            this.button1.Text = " ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBusCta.AccessibleDescription = "";
+            this.btnBusCta.AccessibleName = "";
+            this.btnBusCta.BackColor = System.Drawing.SystemColors.Menu;
+            this.btnBusCta.Image = global::Contabilidad.Properties.Resources._Lookup;
+            this.btnBusCta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnBusCta.Location = new System.Drawing.Point(204, 21);
+            this.btnBusCta.Name = "btnBusCta";
+            this.btnBusCta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnBusCta.Size = new System.Drawing.Size(30, 22);
+            this.btnBusCta.TabIndex = 44;
+            this.btnBusCta.Tag = " ";
+            this.btnBusCta.Text = " ";
+            this.btnBusCta.UseVisualStyleBackColor = false;
+            this.btnBusCta.Click += new System.EventHandler(this.btnBusCta_Click);
             // 
             // label1
             // 
@@ -253,61 +250,56 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Cuenta:";
             // 
-            // textBox4
+            // txtCtaNom
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(235, 22);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(211, 20);
-            this.textBox4.TabIndex = 43;
+            this.txtCtaNom.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCtaNom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCtaNom.Location = new System.Drawing.Point(235, 22);
+            this.txtCtaNom.Name = "txtCtaNom";
+            this.txtCtaNom.Size = new System.Drawing.Size(211, 20);
+            this.txtCtaNom.TabIndex = 1;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.btnTipo);
+            this.groupBox1.Controls.Add(this.txtCtaEntValor);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCoceptoEnt);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtFecha);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(572, 80);
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             // 
-            // textBox6
+            // txtCoceptoEnt
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(76, 41);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(489, 20);
-            this.textBox6.TabIndex = 45;
+            this.txtCoceptoEnt.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCoceptoEnt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCoceptoEnt.Location = new System.Drawing.Point(76, 15);
+            this.txtCoceptoEnt.Name = "txtCoceptoEnt";
+            this.txtCoceptoEnt.Size = new System.Drawing.Size(312, 20);
+            this.txtCoceptoEnt.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(22, 44);
+            this.label4.Location = new System.Drawing.Point(22, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 44;
             this.label4.Text = "Concepto:";
             // 
-            // textBox5
+            // txtFecha
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(460, 15);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(105, 20);
-            this.textBox5.TabIndex = 43;
+            this.txtFecha.BackColor = System.Drawing.SystemColors.Window;
+            this.txtFecha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFecha.Location = new System.Drawing.Point(460, 15);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(105, 20);
+            this.txtFecha.TabIndex = 1;
             // 
             // label3
             // 
@@ -318,53 +310,6 @@
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 42;
             this.label3.Text = "Fecha:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(76, 15);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(105, 20);
-            this.textBox2.TabIndex = 41;
-            // 
-            // btnTipo
-            // 
-            this.btnTipo.AccessibleDescription = "";
-            this.btnTipo.AccessibleName = "";
-            this.btnTipo.BackColor = System.Drawing.SystemColors.Menu;
-            this.btnTipo.Enabled = false;
-            this.btnTipo.Image = global::Contabilidad.Properties.Resources._Lookup;
-            this.btnTipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnTipo.Location = new System.Drawing.Point(182, 13);
-            this.btnTipo.Name = "btnTipo";
-            this.btnTipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnTipo.Size = new System.Drawing.Size(30, 22);
-            this.btnTipo.TabIndex = 40;
-            this.btnTipo.Tag = " ";
-            this.btnTipo.Text = " ";
-            this.btnTipo.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(8, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Tipo entrada:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(213, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 17;
             // 
             // btnPrimero
             // 
@@ -458,7 +403,6 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Enabled = false;
             this.btnAceptar.Image = global::Contabilidad.Properties.Resources._Accept;
             this.btnAceptar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAceptar.Location = new System.Drawing.Point(253, 392);
@@ -515,11 +459,60 @@
             this.btnNuevo.Text = " ";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
+            // txtCtaEntValor
+            // 
+            this.txtCtaEntValor.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCtaEntValor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCtaEntValor.Location = new System.Drawing.Point(76, 45);
+            this.txtCtaEntValor.Name = "txtCtaEntValor";
+            this.txtCtaEntValor.Size = new System.Drawing.Size(158, 20);
+            this.txtCtaEntValor.TabIndex = 45;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(22, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Valor:";
+            // 
+            // Cuenta
+            // 
+            this.Cuenta.DataPropertyName = "cntctano";
+            this.Cuenta.HeaderText = "Cuenta";
+            this.Cuenta.Name = "Cuenta";
+            this.Cuenta.ReadOnly = true;
+            this.Cuenta.Width = 200;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "cntctanom";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
+            // 
+            // Monto
+            // 
+            this.Monto.DataPropertyName = "cntctamonto";
+            this.Monto.HeaderText = "Momto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
+            // 
+            // origen
+            // 
+            this.origen.DataPropertyName = "cntctaOrigen";
+            this.origen.HeaderText = "Origen";
+            this.origen.Name = "origen";
+            this.origen.ReadOnly = true;
+            // 
             // frmcntent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 432);
+            this.ClientSize = new System.Drawing.Size(777, 432);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnPrimero);
             this.Controls.Add(this.btnUltimo);
@@ -537,6 +530,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmcntent";
             this.Text = "Entrada de diario";
+            this.Load += new System.EventHandler(this.frmcntent_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -560,12 +554,10 @@
         private System.Windows.Forms.RadioButton rbtcredito;
         private System.Windows.Forms.RadioButton rbtdebito;
         private System.Windows.Forms.DataGridView dtgTipos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtCtaNo;
+        private System.Windows.Forms.Button btnBusCta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCtaNom;
         private System.Windows.Forms.Button btnPrimero;
         private System.Windows.Forms.Button btnUltimo;
         private System.Windows.Forms.Button btnSiguiente;
@@ -580,13 +572,16 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button btnTipo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCoceptoEnt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCtaMonto;
+        private System.Windows.Forms.TextBox txtCtaEntValor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn origen;
     }
 }

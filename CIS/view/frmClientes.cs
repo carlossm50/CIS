@@ -2281,6 +2281,16 @@ namespace CIS
                 txtFullName.Text = txtnombresCliente.Text + " " + txtApellidosClientes.Text;
             }
         }
+
+        private void btnConBorrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDirBorrar_Click(object sender, EventArgs e)
+        {
+
+        }
                  
     }
 }

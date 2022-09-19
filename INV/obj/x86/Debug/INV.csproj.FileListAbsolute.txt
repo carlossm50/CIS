@@ -12,3 +12,15 @@ C:\CIS\CIS\INV\obj\x86\Debug\INV.pdb
 C:\CIS\CIS\INV\obj\x86\Debug\INV.csprojResolveAssemblyReference.cache
 C:\CIS\CIS\INV\obj\x86\Debug\INV.view.invetarioRPT.resources
 C:\CIS\CIS\INV\obj\x86\Debug\INV.view.rptinventario.resources
+C:\projects\CIS\INV\bin\Debug\INV.exe.config
+C:\projects\CIS\INV\obj\x86\Debug\INV.exe
+C:\projects\CIS\INV\obj\x86\Debug\INV.pdb
+C:\projects\CIS\INV\obj\x86\Debug\INV.csprojResolveAssemblyReference.cache
+C:\projects\CIS\INV\obj\x86\Debug\INV.frminvEntrada.resources
+C:\projects\CIS\INV\obj\x86\Debug\INV.frminvHistorial.resources
+C:\projects\CIS\INV\obj\x86\Debug\INV.frminvMain.resources
+C:\projects\CIS\INV\obj\x86\Debug\INV.frminvSalida.resources
+C:\projects\CIS\INV\obj\x86\Debug\INV.Properties.Resources.resources
+C:\projects\CIS\INV\obj\x86\Debug\INV.view.invetarioRPT.resources
+C:\projects\CIS\INV\obj\x86\Debug\INV.view.rptinventario.resources
+C:\projects\CIS\INV\obj\x86\Debug\INV.csproj.GenerateResource.Cache

@@ -595,6 +595,7 @@
             this.btnConBorrar.TabIndex = 17;
             this.btnConBorrar.Text = "Borrar";
             this.btnConBorrar.UseVisualStyleBackColor = true;
+            this.btnConBorrar.Click += new System.EventHandler(this.btnConBorrar_Click);
             // 
             // btnConAgregar
             // 
@@ -728,6 +729,7 @@
             this.btnDirBorrar.TabIndex = 26;
             this.btnDirBorrar.Text = "Borrar";
             this.btnDirBorrar.UseVisualStyleBackColor = true;
+            this.btnDirBorrar.Click += new System.EventHandler(this.btnDirBorrar_Click);
             // 
             // btnDirAgregar
             // 
@@ -1732,7 +1734,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 463);
+            this.ClientSize = new System.Drawing.Size(781, 462);
             this.Controls.Add(this.pitImagen);
             this.Controls.Add(this.btnImagen);
             this.Controls.Add(this.btnTipocli);

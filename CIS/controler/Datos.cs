@@ -17,11 +17,11 @@ namespace CIS
         static SqlConnection Conexion = new SqlConnection();
         static DataTable Tabla = new DataTable();
         static SqlCommand Comando = new SqlCommand();
-        static string CadenaConexion = "user id =admin ;Data Source=NB-CAM-SEVERINO;Initial Catalog=CIS;password=hola;Integrated Security=false"; 
+        static string CadenaConexion = "user id =root ;Data Source=NB-CAM-SEVERINO;Initial Catalog=CIS;password=hola;Integrated Security=false"; 
         MySqlConnection mysqlconexion = new MySqlConnection();
         public string BotonEjecutado;
 
-        static string mysqlcadena = "DataSource=127.0.0.1;Database=cis; Uid=root;Pwd=casm09;";
+        static string mysqlcadena = "DataSource=127.0.0.1;Database=cis; Uid=root;Pwd=hola;";
         //"Database=cis;Data Source=localhost;User Id=root; Password=casm09"; Este formato tambien funciona //
         
         
@@ -33,6 +33,8 @@ namespace CIS
             try
             {
                 Conexion.ConnectionString = CadenaConexion;
+
+
                 Conexion.Open(); 
                 
                

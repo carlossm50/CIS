@@ -67,9 +67,29 @@ namespace Contabilidad.controler
         }
         public DataTable selectAll()
         {
-            DataTable table_cuentas = new DataTable();
-            string sql = "SELECT cuenta.cntctano,cuenta.cntctanom,cuenta.cntctatipo,cuenta.cUENTASID,cuenta.cntctama " +
+            string sql = "SELECT cuenta.cntctano,cuenta.cntctanom,cuenta.cntctatipo,cuenta.cntctama " +
                            "FROM cis.cuenta";
+            DataTable table_cuentas = new DataTable();            
+            MySqlCommand cmd = new MySqlCommand(sql, mysqlconexion);
+            MySqlDataAdapter adt = new MySqlDataAdapter(cmd);
+
+            try {
+                mysqlconexion.Open();
+                if (mysqlconexion.State == ConnectionState.Open)
+                {
+                    adt.Fill(table_cuentas);
+                }
+                else {
+                    MessageBox.Show("Error en la conexión a la base de datos!");
+                }
+
+            }
+            catch(Exception ex){
+                MessageBox.Show(ex.Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally{
+                mysqlconexion.Close();
+            }
             return table_cuentas;
         }
         public DataTable selectOne()

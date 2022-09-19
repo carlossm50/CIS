@@ -15,7 +15,7 @@ namespace Contabilidad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmcntcta());
+            Application.Run(new frmcntent());
         }
     }
 }

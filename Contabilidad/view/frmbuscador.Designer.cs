@@ -76,6 +76,7 @@
             this.dtgTipos.Name = "dtgTipos";
             this.dtgTipos.ReadOnly = true;
             this.dtgTipos.RowHeadersWidth = 20;
+            this.dtgTipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgTipos.Size = new System.Drawing.Size(432, 169);
             this.dtgTipos.TabIndex = 57;
             // 
@@ -89,7 +90,7 @@
             // 
             // Descripcion
             // 
-            this.Descripcion.DataPropertyName = "Descripción";
+            this.Descripcion.DataPropertyName = "nombre";
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
@@ -105,6 +106,7 @@
             this.btnCancelar.TabIndex = 56;
             this.btnCancelar.Text = " ";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -131,6 +133,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Name = "frmbuscador";
             this.Text = " Buscar";
+            this.Load += new System.EventHandler(this.frmbuscador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgTipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,9 +146,9 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.DataGridView dtgTipos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }
