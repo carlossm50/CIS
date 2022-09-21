@@ -9,7 +9,7 @@
 
 
 
-namespace Contabilidad {
+namespace Contabilidad.model {
 	public class CUENTAS {
 
         private string cntctano;

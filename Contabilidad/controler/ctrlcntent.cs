@@ -2,20 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Data;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Configuration;
+using Contabilidad.model;
+using System.Windows.Forms;
 namespace Contabilidad.controler
 {
     class ctrlcntent : ctrlconection
     {
+        MySqlConnection mysqlconexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["cntString"].ConnectionString);
+
         public ctrlcntent() { 
         
         }
-        public Boolean insert()
+        public Boolean insert(ENTRADA_DIARIO ent, DataTable tblEnt)
         {
-            string sql = "INSERT INTO cis.cuenta (cntctano,cntctanom,cntctatipo,cUENTASID,cntctama) " +
-                              "VALUES (cntctano,cntctanom,cntctatipo,cUENTASID,cntctama)";
+            string sqlDetall = "";
 
-            return true;
+
+            foreach (DataRow row in tblEnt.Rows){
+                sqlDetall += "(last_insert_id(),'" + row["cntctano"].ToString() + "'," + row["cntctamonto"].ToString() + "," + row["cntctaOrigen"].ToString() + "),";
+            
+            }
+            sqlDetall = sqlDetall.Substring(0, sqlDetall.Length - 1);
+ 
+            string sql = "START TRANSACTION;"+
+                        "INSERT INTO tblcntent (`concepEnt`,`valorEnt`,`fechaEnt`) "+
+                        "VALUES ('"+ent.ConcepEntrada+"', "+ent.ValorEntrada.ToString()+", '"+ent.Fecha.ToString("yyyy-MM-dd")+"') ; "+
+                        "INSERT INTO tblcntasi (`noEntrada`,`cntctano`,`asiValor`,`origen`) VALUES " +
+                        sqlDetall+";"+
+                        " COMMIT;";
+            MySqlCommand cmd = new MySqlCommand(sql, mysqlconexion);
+            try
+            {
+                this.mysqlconexion.Open();
+                if (mysqlconexion.State == ConnectionState.Open)
+                {
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            finally
+            {
+                this.mysqlconexion.Close();
+            }
         }
         public Boolean update()
         {

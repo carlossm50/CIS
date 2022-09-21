@@ -39,12 +39,18 @@
             this.rbtcredito = new System.Windows.Forms.RadioButton();
             this.rbtdebito = new System.Windows.Forms.RadioButton();
             this.dtgTipos = new System.Windows.Forms.DataGridView();
+            this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCtaNo = new System.Windows.Forms.TextBox();
             this.btnBusCta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCtaNom = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCoceptoEnt = new System.Windows.Forms.TextBox();
+            this.txtCtaEntValor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtConceptoEnt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,12 +67,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.txtCtaEntValor = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtEntNo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTipos)).BeginInit();
@@ -162,7 +164,7 @@
             // 
             this.groupBox3.Controls.Add(this.rbtcredito);
             this.groupBox3.Controls.Add(this.rbtdebito);
-            this.groupBox3.Location = new System.Drawing.Point(638, 22);
+            this.groupBox3.Location = new System.Drawing.Point(638, 14);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(80, 67);
             this.groupBox3.TabIndex = 3;
@@ -214,6 +216,36 @@
             this.dtgTipos.Size = new System.Drawing.Size(615, 188);
             this.dtgTipos.TabIndex = 58;
             // 
+            // Cuenta
+            // 
+            this.Cuenta.DataPropertyName = "cntctano";
+            this.Cuenta.HeaderText = "Cuenta";
+            this.Cuenta.Name = "Cuenta";
+            this.Cuenta.ReadOnly = true;
+            this.Cuenta.Width = 200;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "cntctanom";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
+            // 
+            // Monto
+            // 
+            this.Monto.DataPropertyName = "cntctamonto";
+            this.Monto.HeaderText = "Momto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
+            // 
+            // origen
+            // 
+            this.origen.DataPropertyName = "cntctaOrigen";
+            this.origen.HeaderText = "Origen";
+            this.origen.Name = "origen";
+            this.origen.ReadOnly = true;
+            // 
             // txtCtaNo
             // 
             this.txtCtaNo.BackColor = System.Drawing.SystemColors.Window;
@@ -261,32 +293,53 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEntNo);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtCtaEntValor);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCoceptoEnt);
+            this.groupBox1.Controls.Add(this.txtConceptoEnt);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 80);
+            this.groupBox1.Size = new System.Drawing.Size(724, 80);
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             // 
-            // txtCoceptoEnt
+            // txtCtaEntValor
             // 
-            this.txtCoceptoEnt.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCoceptoEnt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCoceptoEnt.Location = new System.Drawing.Point(76, 15);
-            this.txtCoceptoEnt.Name = "txtCoceptoEnt";
-            this.txtCoceptoEnt.Size = new System.Drawing.Size(312, 20);
-            this.txtCoceptoEnt.TabIndex = 0;
+            this.txtCtaEntValor.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCtaEntValor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCtaEntValor.Location = new System.Drawing.Point(543, 37);
+            this.txtCtaEntValor.Name = "txtCtaEntValor";
+            this.txtCtaEntValor.Size = new System.Drawing.Size(158, 20);
+            this.txtCtaEntValor.TabIndex = 45;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(489, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Valor:";
+            // 
+            // txtConceptoEnt
+            // 
+            this.txtConceptoEnt.BackColor = System.Drawing.SystemColors.Window;
+            this.txtConceptoEnt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtConceptoEnt.Location = new System.Drawing.Point(76, 37);
+            this.txtConceptoEnt.Name = "txtConceptoEnt";
+            this.txtConceptoEnt.Size = new System.Drawing.Size(390, 20);
+            this.txtConceptoEnt.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(22, 18);
+            this.label4.Location = new System.Drawing.Point(22, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 44;
@@ -296,16 +349,16 @@
             // 
             this.txtFecha.BackColor = System.Drawing.SystemColors.Window;
             this.txtFecha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFecha.Location = new System.Drawing.Point(460, 15);
+            this.txtFecha.Location = new System.Drawing.Point(543, 11);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(105, 20);
+            this.txtFecha.Size = new System.Drawing.Size(158, 20);
             this.txtFecha.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(415, 18);
+            this.label3.Location = new System.Drawing.Point(483, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 42;
@@ -459,60 +512,31 @@
             this.btnNuevo.Text = " ";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // txtCtaEntValor
+            // txtEntNo
             // 
-            this.txtCtaEntValor.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCtaEntValor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCtaEntValor.Location = new System.Drawing.Point(76, 45);
-            this.txtCtaEntValor.Name = "txtCtaEntValor";
-            this.txtCtaEntValor.Size = new System.Drawing.Size(158, 20);
-            this.txtCtaEntValor.TabIndex = 45;
+            this.txtEntNo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEntNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEntNo.Enabled = false;
+            this.txtEntNo.Location = new System.Drawing.Point(76, 11);
+            this.txtEntNo.Name = "txtEntNo";
+            this.txtEntNo.Size = new System.Drawing.Size(139, 20);
+            this.txtEntNo.TabIndex = 47;
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(22, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Valor:";
-            // 
-            // Cuenta
-            // 
-            this.Cuenta.DataPropertyName = "cntctano";
-            this.Cuenta.HeaderText = "Cuenta";
-            this.Cuenta.Name = "Cuenta";
-            this.Cuenta.ReadOnly = true;
-            this.Cuenta.Width = 200;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "cntctanom";
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
-            // 
-            // Monto
-            // 
-            this.Monto.DataPropertyName = "cntctamonto";
-            this.Monto.HeaderText = "Momto";
-            this.Monto.Name = "Monto";
-            this.Monto.ReadOnly = true;
-            // 
-            // origen
-            // 
-            this.origen.DataPropertyName = "cntctaOrigen";
-            this.origen.HeaderText = "Origen";
-            this.origen.Name = "origen";
-            this.origen.ReadOnly = true;
+            this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(14, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Entrada No:";
             // 
             // frmcntent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 432);
+            this.ClientSize = new System.Drawing.Size(752, 432);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnPrimero);
             this.Controls.Add(this.btnUltimo);
@@ -572,7 +596,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCoceptoEnt;
+        private System.Windows.Forms.TextBox txtConceptoEnt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label3;
@@ -583,5 +607,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn origen;
+        private System.Windows.Forms.TextBox txtEntNo;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="model\CFGASIENTOTRN_D.cs" />
     <Compile Include="model\CFGASIENTOTRN_M.cs" />
     <Compile Include="model\CUENTAS.cs" />
+    <Compile Include="model\ENTRADA_DIARIO.cs" />
     <Compile Include="model\RUBROS.cs" />
     <Compile Include="model\TIPOTRANSACCION.cs" />
     <Compile Include="model\TRANSACCION.cs" />

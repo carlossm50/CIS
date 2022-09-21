@@ -9,6 +9,7 @@ using MySql.Data.MySqlClient;
 using Contabilidad.Properties;
 using System.Configuration;
 using System.Windows.Forms;
+using Contabilidad.model;
 namespace Contabilidad.controler
 {
    

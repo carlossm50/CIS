@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Contabilidad.controler;
+using Contabilidad.model;
 namespace Contabilidad
 {
     public partial class frmcntcta : Form

@@ -6,12 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Contabilidad.model;
+using Contabilidad.controler;
 namespace Contabilidad
 {
     public partial class frmcntent : Form
     {
-        DataTable tbl_cuenta = new DataTable();
+        DataTable tbl_asiento = new DataTable();
         BindingSource BsCuenta = new BindingSource();
         public frmcntent()
         {
@@ -50,11 +51,12 @@ namespace Contabilidad
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            //Validaciones de entradas
 
-            if (txtCoceptoEnt.Text == "")
+            if (txtConceptoEnt.Text == "")
             {
                 MessageBox.Show("Debe indicar el concepto de la entrada de diario.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtCoceptoEnt.Focus();
+                txtConceptoEnt.Focus();
                 return;
             }
             if (txtCtaEntValor.Text == "")
@@ -70,15 +72,18 @@ namespace Contabilidad
                 return;
             }
 
-            if (tbl_cuenta.Rows.Count == 0) {
+            if (tbl_asiento.Rows.Count == 0) {
                 MessageBox.Show("No se han definido asientos contables para la entrada de diario.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCtaNo.Focus();
                 return;
             }
 
+            //Validacion de cuentas contables 
+            //Para registrar la entrada de diario es necesario que el monto del credito sea igual al montro del debito.
+            //Cuando eso sucede se dice la el asiciento contable está valaceado.
             double deb = 0;
             double cre = 0;
-            foreach (DataRow row in tbl_cuenta.Rows)
+            foreach (DataRow row in tbl_asiento.Rows)
             {
                 if (row["cntctaOrigen"].ToString() == "-1")
                 {
@@ -88,8 +93,29 @@ namespace Contabilidad
             }
 
             
-            if (deb != cre) 
-                MessageBox.Show("Las cuentas no estan valanceadas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (deb != cre) MessageBox.Show("Las cuentas no estan valanceadas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+            //Registro de la entrada de diario y el asiento contable.
+            ENTRADA_DIARIO entrada = new ENTRADA_DIARIO();
+            try{entrada.Fecha = System.Convert.ToDateTime(txtFecha.Text);}
+            catch{
+                MessageBox.Show("Error en la fecha!");
+                return;
+            }
+            try {entrada.ValorEntrada = System.Convert.ToDouble(txtCtaMonto.Text);}
+            catch {
+                MessageBox.Show("Valor de entrada no valido!");
+                return;
+            }
+            entrada.ConcepEntrada = txtConceptoEnt.Text;
+
+            ctrlcntent ctrlEntrada = new ctrlcntent();
+            if (ctrlEntrada.insert(entrada, tbl_asiento))
+                MessageBox.Show("Informacion guardada con exito!");
+            else MessageBox.Show("Error al guardada!");
+
+
         }
 
         private void btnTipo_Click(object sender, EventArgs e)
@@ -110,22 +136,22 @@ namespace Contabilidad
         private void btnConAgregar_Click(object sender, EventArgs e)
         {
             DataRow row;
-            row = tbl_cuenta.NewRow();
+            row = tbl_asiento.NewRow();
             row["cntctano"] = txtCtaNo.Text;
             row["cntctanom"] = txtCtaNom.Text;
             row["cntctamonto"] = txtCtaMonto.Text;
             row["cntctaOrigen"] = rbtcredito.Checked ? -1 : 1;
-            tbl_cuenta.Rows.Add(row);
+            tbl_asiento.Rows.Add(row);
         }
 
         private void frmcntent_Load(object sender, EventArgs e)
         {
             txtFecha.Text = DateTime.Today.ToString("dd/MM/yyyy");
-            tbl_cuenta.Columns.Add("cntctano");
-            tbl_cuenta.Columns.Add("cntctanom");
-            tbl_cuenta.Columns.Add("cntctamonto");
-            tbl_cuenta.Columns.Add("cntctaOrigen");
-            BsCuenta.DataSource = tbl_cuenta;
+            tbl_asiento.Columns.Add("cntctano");
+            tbl_asiento.Columns.Add("cntctanom");
+            tbl_asiento.Columns.Add("cntctamonto");
+            tbl_asiento.Columns.Add("cntctaOrigen");
+            BsCuenta.DataSource = tbl_asiento;
             //txtCtaNo.DataBindings.Clear();
             //txtCtaNom.DataBindings.Clear();
             //txtCtaMonto.DataBindings.Clear();
@@ -145,7 +171,7 @@ namespace Contabilidad
         private void btnConBorrar_Click(object sender, EventArgs e)
         {
             DataRow row;
-            row = tbl_cuenta.Rows[BsCuenta.Position];
+            row = tbl_asiento.Rows[BsCuenta.Position];
             row.Delete();
         }
     }
