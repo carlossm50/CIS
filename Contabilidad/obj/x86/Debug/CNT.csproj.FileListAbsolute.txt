@@ -30,3 +30,4 @@ C:\projects\CIS\Contabilidad\bin\Debug\Contabilidad.exe.config
 C:\projects\CIS\Contabilidad\bin\Debug\Contabilidad.exe
 C:\projects\CIS\Contabilidad\bin\Debug\Contabilidad.pdb
 C:\projects\CIS\Contabilidad\obj\x86\Debug\CNT.csprojResolveAssemblyReference.cache
+C:\projects\CIS\Contabilidad\obj\x86\Debug\Contabilidad.view.frmcntciclo.resources

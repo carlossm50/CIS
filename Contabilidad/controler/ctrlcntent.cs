@@ -29,8 +29,8 @@ namespace Contabilidad.controler
             sqlDetall = sqlDetall.Substring(0, sqlDetall.Length - 1);
  
             string sql = "START TRANSACTION;"+
-                        "INSERT INTO tblcntent (`concepEnt`,`valorEnt`,`fechaEnt`) "+
-                        "VALUES ('"+ent.ConcepEntrada+"', "+ent.ValorEntrada.ToString()+", '"+ent.Fecha.ToString("yyyy-MM-dd")+"') ; "+
+                        "INSERT INTO tblcntent (`concepEnt`,`valorEnt`,`fechaEnt`,`estado`) " +
+                        "VALUES ('"+ent.ConcepEntrada+"', "+ent.ValorEntrada.ToString()+", '"+ent.Fecha.ToString("yyyy-MM-dd")+"','A') ; "+
                         "INSERT INTO tblcntasi (`noEntrada`,`cntctano`,`asiValor`,`origen`) VALUES " +
                         sqlDetall+";"+
                         " COMMIT;";

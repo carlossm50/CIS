@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controler\ctrlcntciclo.cs" />
     <Compile Include="controler\ctrlconection.cs" />
     <Compile Include="controler\ctrlcfgAsitrn.cs" />
     <Compile Include="controler\ctrlcntcta.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="controler\ctrlcrud.cs" />
     <Compile Include="model\CFGASIENTOTRN_D.cs" />
     <Compile Include="model\CFGASIENTOTRN_M.cs" />
+    <Compile Include="model\CICLO.cs" />
     <Compile Include="model\CUENTAS.cs" />
     <Compile Include="model\ENTRADA_DIARIO.cs" />
     <Compile Include="model\RUBROS.cs" />
@@ -96,6 +98,12 @@
     </Compile>
     <Compile Include="view\frmcfgAsitrn.Designer.cs">
       <DependentUpon>frmcfgAsitrn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmcntciclo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmcntciclo.Designer.cs">
+      <DependentUpon>frmcntciclo.cs</DependentUpon>
     </Compile>
     <Compile Include="view\frmcntcta.cs">
       <SubType>Form</SubType>
@@ -137,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmcfgAsitrn.resx">
       <DependentUpon>frmcfgAsitrn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmcntciclo.resx">
+      <DependentUpon>frmcntciclo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmcntcta.resx">
       <DependentUpon>frmcntcta.cs</DependentUpon>
